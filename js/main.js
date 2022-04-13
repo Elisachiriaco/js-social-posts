@@ -110,18 +110,20 @@ function stampaCard(){
                 </div>            
             </div>
         `;
-        console.log(post);
+        // console.log(post);
     })
 };
 stampaCard();
 
 // Creo funzione per cambiare colore al tasto like e incrementare like
-const like = document.querySelector('.like-button');
+const like = document.querySelectorAll('.like-button')
 
-like.addEventListener("click", function() {
-    like.style.color = "blue";
- });
-
-
-
+function miPiace(){
+    like.forEach((likes)=>{
+        likes.addEventListener("click", function(){
+            likes.classList.add("like-button--liked");
+        })
+    })
+};
+miPiace();
 
